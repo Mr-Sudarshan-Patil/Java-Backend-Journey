@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="BsWVwMSngHVCP-8PbMrc">
+    <mxGraphModel dx="1288" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="alm__ay84CUVZveRWwqY-6" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Why we use Java ?&amp;nbsp;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="190" x="295" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-4" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="alm__ay84CUVZveRWwqY-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Free to use" vertex="1">
+          <mxGeometry height="80" width="160" x="310" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-7" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="alm__ay84CUVZveRWwqY-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Object Oriented Programming Langauge" vertex="1">
+          <mxGeometry height="80" width="160" x="310" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Platform Independence (OS)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Means?&lt;/div&gt;&lt;div&gt;We Write Once and Use Any Platform Withought Change&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="180" x="300" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-12" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="alm__ay84CUVZveRWwqY-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Windows" vertex="1">
+          <mxGeometry height="50" width="120" x="550" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-13" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="alm__ay84CUVZveRWwqY-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Linux" vertex="1">
+          <mxGeometry height="50" width="120" x="550" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-14" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="alm__ay84CUVZveRWwqY-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Mac" vertex="1">
+          <mxGeometry height="50" width="120" x="550" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-16" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-18" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="alm__ay84CUVZveRWwqY-17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Garbage Collection ( Auto)&lt;div&gt;It will remove the unnessesary space&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="300" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-20" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="alm__ay84CUVZveRWwqY-19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-17" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Secure" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-22" edge="1" parent="1" source="alm__ay84CUVZveRWwqY-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="alm__ay84CUVZveRWwqY-21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-19" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="JIT" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="alm__ay84CUVZveRWwqY-21" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Widly Use in Market" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="570" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

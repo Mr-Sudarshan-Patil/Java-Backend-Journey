@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="tc23Krs1cknLPNSyPjkL">
+    <mxGraphModel dx="1084" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-3" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Student" vertex="1">
+          <mxGeometry height="60" width="30" x="140" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-2" parent="1" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_Wireless.svg;" value="" vertex="1">
+          <mxGeometry height="194" width="190.37" x="490" y="673" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2+2?" vertex="1">
+          <mxGeometry height="30" width="60" x="210" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-6" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="To give the instruction for the computer then we have to use atelease on programming langage e.g C, C++, Python, Java and Javascript" vertex="1">
+          <mxGeometry height="140" width="220" x="220" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-9" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Why we use the programming langauge" vertex="1">
+          <mxGeometry height="40" width="340" x="210" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="To Communicate with the computer" vertex="1">
+          <mxGeometry height="80" width="120" x="330" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="How Humans will intract with each other" vertex="1">
+          <mxGeometry height="40" width="230" x="125" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-21" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250.42857142857133" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-22" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-32" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Vs8A5Z03xr3kw05H5MhU-28" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-33" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Vs8A5Z03xr3kw05H5MhU-28" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-34" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Vs8A5Z03xr3kw05H5MhU-28" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-19" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="60" width="30" x="220" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-20" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="60" width="30" x="570" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="To speak with ther own hometoun languge like, Marathi, Hindi, English&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="260" x="280" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-26" parent="1" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer.svg;" value="" vertex="1">
+          <mxGeometry height="61.800000000000004" width="45.6" x="600" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-30" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Vs8A5Z03xr3kw05H5MhU-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;But the computer only understand binary code (0 &amp;amp; 1), then will use programming languages like java python and c++&lt;/div&gt;" vertex="1">
+          <mxGeometry height="91.8" width="250" x="270" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-29" edge="1" parent="1" source="Vs8A5Z03xr3kw05H5MhU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.327;entryDx=0;entryDy=0;entryPerimeter=0;" target="Vs8A5Z03xr3kw05H5MhU-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vs8A5Z03xr3kw05H5MhU-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="How to communicate with the computer" vertex="1">
+          <mxGeometry height="30" width="210" x="120" y="640" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

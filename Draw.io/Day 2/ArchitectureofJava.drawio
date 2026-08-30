@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="1IkS7KE3r8w1Eu4e3fPa">
+    <mxGraphModel dx="1212" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-1" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O0Pcb6dXPqmcaLAgM47P-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Developer" vertex="1">
+          <mxGeometry height="60" width="30" x="60" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-3" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O0Pcb6dXPqmcaLAgM47P-7" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="230" />
+              <mxPoint x="310" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-4" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=top;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Java Source code / .java&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="150" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Task: Print Hello" vertex="1">
+          <mxGeometry height="30" width="60" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-6" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O0Pcb6dXPqmcaLAgM47P-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-7" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=top;" value="Java Compiler (javac) Compiles the Source Code" vertex="1">
+          <mxGeometry height="60" width="120" x="350" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-8" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-9" parent="1" style="whiteSpace=wrap;html=1;verticalAlign=top;" value="Convert to Bytecode (.class)" vertex="1">
+          <mxGeometry height="60" width="120" x="510" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-10" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="javac FileName.java" vertex="1">
+          <mxGeometry height="30" width="60" x="280" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-31" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="O0Pcb6dXPqmcaLAgM47P-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="JVM loads, verifies, and executes the bytecode" vertex="1">
+          <mxGeometry height="60" width="120" x="680" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-13" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O0Pcb6dXPqmcaLAgM47P-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="java FileName" vertex="1">
+          <mxGeometry height="30" width="60" x="700" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-15" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="O0Pcb6dXPqmcaLAgM47P-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="392.1" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-16" parent="1" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_Wireless.svg;" value="" vertex="1">
+          <mxGeometry height="64.2" width="63" x="394" y="427.1" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-19" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="O0Pcb6dXPqmcaLAgM47P-22" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-21" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Output" vertex="1">
+          <mxGeometry height="64.2" width="60" x="250" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Hello" vertex="1">
+          <mxGeometry height="30" width="60" x="106" y="444.2" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-32" edge="1" parent="1" source="O0Pcb6dXPqmcaLAgM47P-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O0Pcb6dXPqmcaLAgM47P-16" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O0Pcb6dXPqmcaLAgM47P-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="CPU executes machine code. JIT Compiler converts frequently executed bytecode into native machine code for faster execution" vertex="1">
+          <mxGeometry height="90" width="240" x="610" y="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,116 @@
+# 📘 My Java Backend Learning Journey
+
+Hi! This repository is my daily learning log while I learn **Java** and backend development, under the mentorship of [Suresh Bishnoi](https://www.linkedin.com/in/bishnoisuresh/) Sir.
+
+I am writing this in simple English, so I (and anyone else reading it) can revise concepts easily. I also draw diagrams in **[draw.io](https://draw.io)** for every topic — this helps me understand the *flow*, not just the theory.
+
+📌 **How I use this repo:**
+- I add a new "Day" section below every day.
+- I upload my practice `.java` code files along with this README.
+- I save my draw.io diagrams as images inside the `assets/` folder and link them here.
+
+---
+
+## 🗓️ Day 1 – Java Basics
+
+I learned why Java is used so widely in the industry:
+
+| Feature | What it means (in simple words) |
+|---|---|
+| ✅ Platform Independent | Java code runs on any OS (Windows, Mac, Linux) without changes, because of the JVM. |
+| ✅ Object Oriented (OOPs) | We build programs using "objects" (like real-world things), which keeps code organized and reusable. |
+| ✅ Automatic Garbage Collection | Java automatically removes unused objects from memory. We don't have to clean up manually. |
+| ✅ Secure | Java doesn't allow direct memory access, which lowers the risk of harmful code. |
+| ✅ JIT Compilation | The Just-In-Time compiler converts bytecode to machine code at run time, making programs faster. |
+| ✅ Free to Use | Anyone can download and use Java without paying, which is why it's so widely adopted. |
+
+I also wrote and successfully **compiled my first Java program**. Our instructor also told us to use **draw.io** to make architecture diagrams for every topic. This is helping me a lot — I understand concepts by *seeing* the flow, not just reading about it.
+
+---
+
+## 🗓️ Day 2 – How Java Works Internally
+
+Today I learned the **full execution flow** of a Java program:
+
+```
+Java Source Code → Compiler → Bytecode → JVM → Output
+```
+
+![Java Execution Flow](assets/java-execution-flow.svg)
+
+I also practiced some basic rules:
+- Every statement in Java ends with a **semicolon `;`**
+- Java is **case-sensitive** (`Main` and `main` are different)
+
+I solved some practice questions to make sure I understood these rules properly, and I made my own version of this diagram in draw.io.
+
+I'm also uploading all my practice code to GitHub every day to stay consistent — something I already built as a habit during my JavaScript days, and now I'm carrying it into this Java/backend journey.
+
+---
+
+## 🗓️ Day 3 – Structure and Flow of a Java Program
+
+Today I focused on understanding the **basic structure** of a Java program, especially the `main()` method.
+
+### 🚪 The "Entry Point" Idea
+Just like a house needs a door to enter, a Java program needs the **`main()`** method as the entry point — this is where the JVM starts running the code.
+
+![Main Method Entry Point](assets/main-method-entry-point.svg)
+
+### 🛠️ Basic Development Flow
+```
+Requirement Understanding → Design → Development → Build (Compile) → Execute / Run & Test
+```
+
+As a practice example, I created an **`Account`** class to represent customer details (like in an SBI Net Banking example) and printed that information using Java.
+
+### 🔑 New Concepts I Learned Today
+- `public`, `private`, and `default` (access modifiers — who can use the code)
+- **Identifiers** (the names we give to classes, methods, variables)
+- `static` keyword (belongs to the class, not to a single object)
+- `void` (method that doesn't return any value)
+- `main()` (the entry point method)
+- `String[] args` (used to pass values into the program from outside)
+
+I wrote a small program combining all these concepts together, instead of just reading the theory — this made it much easier to understand.
+
+---
+
+## 🗓️ Day 4 – *(Add your next day here)*
+
+> Copy the template below every day and fill it in. Keep it simple — write what you learned like you're explaining it to a friend.
+
+```markdown
+## 🗓️ Day X – <Topic Title>
+
+What I learned today:
+- Point 1
+- Point 2
+
+Code / practice:
+- Link to today's practice file, e.g. [Day4.java](./Day4.java)
+
+Diagram:
+![Diagram Title](assets/dayX-diagram.svg)
+
+Notes:
+- Anything tricky or important to remember
+```
+
+---
+
+## 📂 Repo Structure
+```
+├── README.md              <- This daily learning log
+├── assets/                <- draw.io diagrams exported as images (.svg / .png)
+│   ├── java-execution-flow.svg
+│   └── main-method-entry-point.svg
+├── Day1.java               <- (add your practice code files here)
+├── Day2.java
+├── Day3.java
+└── ...
+```
+
+---
+
+⭐ *Consistency over perfection — one concept, one day at a time.*
