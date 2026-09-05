@@ -71,6 +71,7 @@ I wrote a small program combining all these concepts together, instead of just r
 
 # [How Java Memory Works with Primitive and Non-Primitive Types](Java%20Memory%20%28Stack%20Or%20Heap%29/README.md)
 # [Static vs Dynamic](static-vs-dynamic/static.md)
+# [Understanding of JIT and Interpreter with full Architecture](Understanding%20Of%20JIT/README.md)
 ---
 
 ⭐ *Consistency over perfection — one concept, one day at a time.*
