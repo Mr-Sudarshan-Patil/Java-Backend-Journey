@@ -9,7 +9,8 @@ public class LargestNumber
 		int num1 = sc.nextInt();
 		int num2 = sc.nextInt();
 		int num3 = sc.nextInt();
-		
+
+/*
 		if(num1 > num2 && num1 > num3) {
 			System.out.println("The largest number is num1 : " + num1);
 		}
@@ -19,5 +20,25 @@ public class LargestNumber
 		else{
 			System.out.println("The largest number is num3: " + num3);
 		}
+	
+	
+*/
+/*
+		int max = num1;
+
+		if(max < num2){
+			max = num2;
+		}
+		if(max < num3){
+			max = num3;
+		}
+		
+		System.out.println(max);
+*/
+
+		int max = Math.max(num3, Math.max(num1, num2));
+		System.out.println(max);
+		
+	
 	}
 }
