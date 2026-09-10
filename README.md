@@ -73,5 +73,5 @@ I wrote a small program combining all these concepts together, instead of just r
 # [Static vs Dynamic](static-vs-dynamic/static.md)
 # [Understanding of JIT and Interpreter with full Architecture](Understanding%20Of%20JIT/README.md)
 ---
-
+# [Day 4 Command-Line Arguments](Day%204/Day4-Java-Command-Line.md)
 ⭐ *Consistency over perfection — one concept, one day at a time.*
