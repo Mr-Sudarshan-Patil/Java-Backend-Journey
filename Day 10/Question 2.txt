@@ -1,0 +1,93 @@
+Day10
+│
+├── com
+│   └── kodewala
+│       ├── employee
+│       │   └── Employee.java
+│       │
+│       └── payroll
+│           └── Payroll.java
+│
+└── Main.java
+
+
+1. Employee.java
+
+Create a class Employee with:
+
+one public variable called name
+one public variable called department
+one private variable called salary
+one private variable called employeeId
+one public method called showEmployee()
+inside showEmployee(), print the employee's name, department, employee ID, and salary
+
+Now create another public method called:
+
+calculateAnnualSalary()
+
+This method should calculate the employee's annual salary.
+
+For example:
+
+Monthly salary = ₹50,000
+Annual salary = ₹50,000 × 12
+
+
+2. Payroll.java
+
+Create a class Payroll.
+
+Import the Employee class.
+
+Inside Payroll, create a method:
+
+processSalary()
+
+This method should:
+
+Create an Employee object.
+Set the employee's name.
+Set the employee's department.
+Try to access the employee's salary directly.
+Try to access the employee's employee ID directly.
+Call showEmployee().
+Call calculateAnnualSalary().
+
+3. Main.java
+
+Main should not belong to either package.
+
+Import:
+
+com.kodewala.employee.Employee
+com.kodewala.payroll.Payroll
+
+Create a Payroll object and call:
+
+processSalary()
+
+
+🔥 Business Logic Challenge
+
+The company has a bonus policy:
+
+If annual salary is ₹6,00,000 or more, give a 10% bonus.
+If annual salary is less than ₹6,00,000, give a 5% bonus.
+
+Add a method to calculate the bonus.
+
+For example:
+
+Monthly salary = ₹50,000
+Annual salary = ₹6,00,000
+Bonus = 10%
+Bonus amount = ₹60,000
+
+Then display:
+
+Employee Name: Rahul
+Department: IT
+Annual Salary: ₹6,00,000
+Bonus: ₹60,000
+Total Salary: ₹6,60,000
