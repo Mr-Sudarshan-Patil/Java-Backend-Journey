@@ -1,0 +1,26 @@
+
+
+control + shift + f = formate code
+
+f6 + debug
+
+control + shif + o : means remmove unvonted use packages
+
+syss => control + space
+
+serarch / open perticular file = > control + shift + R
+inside jar file i want to opern => control + shift + T
+
+close current file => control w
+
+maximize the screen of coding then use => control + m
+
+singl comment  => control /
+multi comment => control + shift /
+multi comment remov =? control + shift \
+
+generate getter and seeter => alt + shift S R
+
+
+
+delete line => controle delete / control d
