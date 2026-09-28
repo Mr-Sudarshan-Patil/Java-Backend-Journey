@@ -26,7 +26,7 @@ public class MethodClass
 	
 		// Math.sqrt(a) : Returns the sqrt root of a double value
 		
-		double result = Math.abs(-10);
+		double result = Math.abs();
 		System.out.printf("%.2f", result);
 	
 	}

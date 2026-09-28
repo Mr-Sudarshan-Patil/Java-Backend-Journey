@@ -632,6 +632,384 @@ Simple rule to remember:
 static method/variable   -->  call using ClassName
 instance method/variable -->  call using object (new ClassName())
 ```
+---
+
+# Java Constructors
+
+This repository contains Java practice and notes on **Constructors, Constructor Chaining, `this()`, and `super()`**.
+
+## Topics Covered
+
+- What is a Constructor?
+- Constructor creation and initialization
+- `this()` constructor call
+- `super()` constructor call
+- Constructor Chaining
+- `this` vs `super`
+- Parent and Child classes
+- Common and specific properties
+- Practical use of `this()`
+- Practical use of `super()`
+- Constructor access modifiers
+- Constructor vs object update
+
+---
+
+## 1. What is a Constructor?
+
+A constructor is used to **create an object and initialize its state**.
+
+### Rules
+
+- Constructor name must be the same as the class name.
+- Constructor does not have a return type.
+- Constructor executes when an object is created.
+
+```java
+class Test {
+
+    String name;
+    int age;
+
+    Test(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+Creating an object:
+
+```java
+Test t = new Test("Sudarshan", 27);
+```
+
+---
+
+## 2. `this()`
+
+`this()` is used to call another constructor of the **same class**.
+
+```java
+class Test {
+
+    String name;
+    int age;
+
+    Test() {
+        this("Sudarshan", 27);
+    }
+
+    Test(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+### Flow
+
+```text
+Test()
+   ↓
+this("Sudarshan", 27)
+   ↓
+Test(String, int)
+```
+
+---
+
+## 3. `super()`
+
+`super()` is used to call the constructor of the **parent class**.
+
+```java
+class Product {
+
+    Product(String name, int price) {
+        // parent constructor
+    }
+}
+
+class ElectronicProduct extends Product {
+
+    ElectronicProduct(String name, int price) {
+        super(name, price);
+    }
+}
+```
+
+---
+
+## 4. Constructor Chaining
+
+Constructor chaining means:
+
+> **One constructor calls another constructor.**
+
+It can happen using:
+
+```text
+this()  → Same class constructor
+super() → Parent class constructor
+```
+
+### Important Rule
+
+`this()` or `super()` must be the **first statement** inside a constructor.
+
+If neither is written, Java implicitly calls:
+
+```java
+super();
+```
+
+---
+
+## 5. `this` vs `super`
+
+| `this` | `super` |
+|---|---|
+| Current/Same class | Parent class |
+| `this()` → same class constructor | `super()` → parent constructor |
+| `this.name` → current object's variable | `super.name` → parent variable |
+
+### Easy Memory
+
+```text
+this  → SAME
+super → PARENT
+```
+
+---
+
+## 6. Practical Use of `this()`
+
+`this()` can be used to provide **default values** through another constructor.
+
+```java
+class User {
+
+    String name;
+    String country;
+
+    User() {
+        this("Guest", "India");
+    }
+
+    User(String name, String country) {
+        this.name = name;
+        this.country = country;
+    }
+}
+```
+
+Now:
+
+```java
+User user = new User();
+```
+
+The default values are initialized through constructor chaining.
+
+---
+
+## 7. Practical Use of `super()`
+
+`super()` is useful when the parent class contains **common fields** and the child class contains **specific fields**.
+
+### Parent Class
+
+```java
+class Product {
+
+    String name;
+    int price;
+    String productId;
+
+    Product(String name, int price, String productId) {
+        this.name = name;
+        this.price = price;
+        this.productId = productId;
+    }
+}
+```
+
+### Child Class
+
+```java
+class ElectronicProduct extends Product {
+
+    String warranty;
+
+    ElectronicProduct(String name, int price,
+                      String productId, String warranty) {
+
+        super(name, price, productId);
+
+        this.warranty = warranty;
+    }
+}
+```
+
+### Structure
+
+```text
+Product
+├── name
+├── price
+└── productId
+        ↓
+ElectronicProduct
+└── warranty
+```
+
+`super()` initializes the **common parent fields**, while the child constructor initializes its **specific field**.
+
+### Main Benefit
+
+> Avoids duplicate initialization code.
+
+---
+
+## 8. Common vs Specific Properties
+
+Different product types can have different properties.
+
+### Electronic Product
+
+```text
+name
+price
+productId
+warranty
+```
+
+### Clothing Product
+
+```text
+name
+price
+productId
+size
+color
+```
+
+The common properties can be kept in the parent `Product` class, while specific properties can be kept in child classes.
+
+---
+
+## 9. Constructor is Not Used for Updating
+
+A constructor is used when **creating an object**.
+
+```java
+Product p = new Product("Phone", 50000);
+```
+
+To update an existing object, use a method/setter instead of trying to call the constructor again.
+
+---
+
+## 10. Constructor Access Modifiers
+
+Constructors follow the same access rules as other class members.
+
+| Modifier | Access |
+|---|---|
+| `public` | Anywhere |
+| `default` | Same package |
+| `private` | Same class |
+| `protected` | Same package + subclasses |
+
+Example:
+
+```java
+public Product() {
+}
+```
+
+A `public` constructor can be accessed from outside the package.
+
+A default constructor is accessible within the same package.
+
+---
+
+## 11. Quick Revision
+
+```text
+Constructor
+    ↓
+Create + Initialize Object
+
+this()
+    ↓
+Same Class Constructor
+
+super()
+    ↓
+Parent Class Constructor
+
+Constructor Chaining
+    ↓
+One Constructor → Another Constructor
+
+this  = SAME
+super = PARENT
+```
+
+---
+
+## 12. Interview Question
+
+### What is the difference between `this()` and `super()`?
+
+**Answer:**
+
+`this()` is used to call another constructor of the same class, whereas `super()` is used to call the constructor of the parent class.
+
+---
+
+## Practice
+
+Try creating similar examples using:
+
+- `Netflix User`
+- `E-commerce Product`
+- `Electronic Product`
+- `Clothing Product`
+- Another application/domain of your choice
+
+The goal is to understand **why** `this()` and `super()` are used, not just memorize the syntax.
+
+---
+
+## Repository Structure
+
+```text
+java-constructors/
+│
+├── README.md
+│
+└── src/
+    └── com/
+        └── constructor/
+            ├── Test.java
+            ├── Driver.java
+            ├── Product.java
+            └── ElectronicProduct.java
+```
+
+---
+
+## Key Takeaway
+
+```text
+this()  → Call constructor in SAME class
+super() → Call constructor in PARENT class
+```
+
+**Constructor Chaining = Calling one constructor from another constructor.**
 
 
 ---
