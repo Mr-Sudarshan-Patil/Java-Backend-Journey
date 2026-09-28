@@ -633,6 +633,405 @@ static method/variable   -->  call using ClassName
 instance method/variable -->  call using object (new ClassName())
 ```
 ---
+# Java Methods
+
+Simple notes from the Java session, with the unrelated classroom conversation removed.
+
+## 1. What is a Method?
+
+A **method** is a block of code used to perform a specific task.
+
+```java
+void printMessage() {
+    System.out.println("Hello");
+}
+```
+
+### Why use methods?
+
+- Organize code
+- Reuse code
+- Keep `main()` simple
+- Perform a specific task
+
+> Write the logic inside methods instead of putting everything inside `main()`.
+
+---
+
+## 2. Basic Method Structure
+
+```java
+returnType methodName(parameters) {
+
+    // logic
+
+    return value;
+}
+```
+
+Example:
+
+```java
+boolean doTransaction(int amount,
+                      String senderAccount,
+                      String receiverAccount) {
+
+    // business logic
+
+    return true;
+}
+```
+
+### Parts of a Method
+
+```text
+boolean              → return type
+doTransaction        → method name
+int amount           → parameter
+String senderAccount → parameter
+String receiverAccount → parameter
+{ }                  → method body
+return true          → return value
+```
+
+---
+
+## 3. Parameters
+
+**Parameters** are inputs received by a method.
+
+```java
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+Here:
+
+```text
+a and b → parameters
+```
+
+When calling the method:
+
+```java
+add(10, 20);
+```
+
+`10` and `20` are the values passed to the method.
+
+---
+
+## 4. Return Type
+
+The return type tells what type of value the method returns.
+
+### `int`
+
+```java
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+### `boolean`
+
+```java
+boolean isValid(int age) {
+    return age >= 18;
+}
+```
+
+### `void`
+
+If the method does not return a value:
+
+```java
+void printMessage() {
+    System.out.println("Hello");
+}
+```
+
+---
+
+## 5. Calling a Method
+
+### Static Method
+
+A `static` method belongs to the class.
+
+Call it using the class name:
+
+```java
+ClassName.methodName();
+```
+
+Example:
+
+```java
+MathOperations.add(10, 20);
+```
+
+### Non-Static Method
+
+A non-static method belongs to an object.
+
+Create an object first:
+
+```java
+MathOperations obj = new MathOperations();
+
+obj.add(10, 20);
+```
+
+Remember:
+
+```text
+static     → class
+non-static → object
+```
+
+---
+
+## 6. Method Reusability
+
+A major benefit of methods is **code reuse**.
+
+Instead of writing the same logic 100 times:
+
+```text
+Write method once
+      ↓
+Call it many times
+```
+
+Example:
+
+```java
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+Call it multiple times:
+
+```java
+add(10, 20);
+add(30, 40);
+add(50, 60);
+```
+
+The same method is reused with different inputs.
+
+---
+
+## 7. Method Execution Flow
+
+Java starts execution from `main()`.
+
+```text
+main()
+  ↓
+calls method
+  ↓
+control goes to method
+  ↓
+method executes
+  ↓
+return value
+  ↓
+control comes back to caller
+```
+
+Example:
+
+```java
+public static void main(String[] args) {
+
+    boolean result = doTransaction(100, "A101", "B202");
+
+    System.out.println(result);
+}
+```
+
+---
+
+## 8. Example: Fund Transfer
+
+A fund-transfer method may require:
+
+```text
+Amount
+Sender Account
+Receiver Account
+```
+
+Example:
+
+```java
+boolean doTransaction(int amount,
+                      String senderAccount,
+                      String receiverAccount) {
+
+    // debit sender
+    // credit receiver
+
+    return true;
+}
+```
+
+Basic idea:
+
+```text
+Sender balance = 100
+Receiver balance = 200
+Transfer      = 10
+
+Sender   → 90
+Receiver → 210
+```
+
+Total money remains:
+
+```text
+90 + 210 = 300
+```
+
+---
+
+## 9. Method Types
+
+### Inbuilt Methods
+
+Methods already provided by Java/classes.
+
+Examples:
+
+```java
+System.out.println();
+Integer.parseInt();
+```
+
+### User-Defined Methods
+
+Methods created by the developer.
+
+```java
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+---
+
+## 10. Naming Convention
+
+Use **camelCase** for method and variable names.
+
+Correct:
+
+```java
+doTransaction();
+calculateAmount();
+addNumbers();
+```
+
+Avoid:
+
+```java
+DoTransaction();
+calculate_amount();
+ADDNUMBERS();
+```
+
+Use meaningful names that describe what the method does.
+
+---
+
+## 11. Single Responsibility Principle
+
+A class should have **one main responsibility**.
+
+Example:
+
+```text
+FundTransfer
+    ↓
+Fund transfer functionality
+```
+
+Do not mix unrelated functionality into the same class:
+
+```text
+Fund transfer
++ Add beneficiary
++ Send SMS
++ Open fixed deposit
++ Notifications
+```
+
+Keep related functionality together.
+
+### Simple Rule
+
+```text
+One class → One main responsibility
+```
+
+---
+
+# Quick Revision
+
+```text
+Method
+→ Block of code that performs a task
+
+Parameter
+→ Input received by method
+
+Return type
+→ Type of value returned
+
+void
+→ No return value
+
+static
+→ Called using class
+
+non-static
+→ Called using object
+
+Method reuse
+→ Write once, call many times
+
+main()
+→ Starting point of program
+
+User-defined method
+→ Created by developer
+
+Inbuilt method
+→ Already provided by Java
+
+camelCase
+→ Method and variable naming convention
+
+Single Responsibility
+→ One class should have one main responsibility
+```
+
+## Practice
+
+Create methods for:
+
+1. Add two numbers
+2. Subtract two numbers
+3. Calculate discount
+4. Check whether a number is even
+5. Calculate fund transfer
+6. Return `true` / `false` based on a condition
+
+---
 
 # Java Constructors & Inheritance
 
