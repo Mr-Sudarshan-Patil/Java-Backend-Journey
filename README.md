@@ -634,6 +634,437 @@ instance method/variable -->  call using object (new ClassName())
 ```
 ---
 
+# Java Constructors & Inheritance
+
+Simple notes from today's Java session.  
+Only the important technical concepts are included.
+
+---
+
+## 1. Constructor
+
+A **constructor** is used to initialize an object.
+
+### Rules
+
+- Constructor name must be the same as the class name.
+- It has **no return type**.
+- It runs when an object is created.
+
+```java
+class User {
+
+    String name;
+    String country;
+
+    User(String name, String country) {
+        this.name = name;
+        this.country = country;
+    }
+}
+```
+
+---
+
+## 2. Default Constructor
+
+A constructor without parameters:
+
+```java
+User() {
+}
+```
+
+If no constructor is written at all, Java can provide a default constructor automatically.
+
+If you create your own parameterized constructor, Java does **not** automatically provide the no-argument constructor.
+
+---
+
+## 3. Parameterized Constructor
+
+A constructor that receives values:
+
+```java
+User(String name, String country) {
+    this.name = name;
+    this.country = country;
+}
+```
+
+Object creation:
+
+```java
+User u = new User("Sudarshan", "India");
+```
+
+---
+
+## 4. `this`
+
+`this` refers to the **current object**.
+
+```java
+this.name = name;
+```
+
+Here:
+
+```text
+this.name → instance variable
+name      → constructor parameter
+```
+
+---
+
+## 5. `this()`
+
+`this()` calls another constructor of the **same class**.
+
+```java
+class User {
+
+    String name;
+    int age;
+
+    User() {
+        this("Sudarshan", 27);
+    }
+
+    User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+### Flow
+
+```text
+User()
+  ↓
+this("Sudarshan", 27)
+  ↓
+User(String, int)
+```
+
+### Rule
+
+`this()` must be the **first statement** inside the constructor.
+
+---
+
+## 6. Inheritance
+
+Inheritance allows a child class to inherit from a parent class.
+
+```java
+class Product {
+}
+
+class ElectronicProduct extends Product {
+}
+```
+
+```text
+Product
+   ↑
+ElectronicProduct
+```
+
+`extends` creates the parent-child relationship.
+
+---
+
+## 7. `super()`
+
+`super()` calls the constructor of the **parent class**.
+
+```java
+class Product {
+
+    Product(String name, int price, String productId) {
+        // initialize common fields
+    }
+}
+
+class ElectronicProduct extends Product {
+
+    ElectronicProduct(String name, int price, String productId) {
+        super(name, price, productId);
+    }
+}
+```
+
+### Remember
+
+```text
+this()  → same class constructor
+super() → parent class constructor
+```
+
+`super()` is used for **constructor chaining** and reusing parent initialization.
+
+---
+
+## 8. Common + Specific Fields
+
+A parent class should contain fields common to all products.
+
+```text
+Product
+├── name
+├── price
+└── productId
+```
+
+A child class can contain fields specific to its type.
+
+```text
+ElectronicProduct
+└── warranty
+```
+
+Example:
+
+```java
+class Product {
+
+    String name;
+    int price;
+    String productId;
+
+    Product(String name, int price, String productId) {
+        this.name = name;
+        this.price = price;
+        this.productId = productId;
+    }
+}
+
+class ElectronicProduct extends Product {
+
+    String warranty;
+
+    ElectronicProduct(String name, int price,
+                      String productId, String warranty) {
+
+        super(name, price, productId);
+        this.warranty = warranty;
+    }
+}
+```
+
+### Benefit
+
+`super()` avoids repeating the parent initialization code.
+
+---
+
+## 9. Constructor Chaining
+
+**Constructor chaining** means one constructor calls another constructor.
+
+```text
+this()  → constructor in same class
+super() → constructor in parent class
+```
+
+Important:
+
+```text
+this() / super()
+      ↓
+must be first statement
+```
+
+---
+
+## 10. Constructor Cannot Update an Existing Object
+
+A constructor is used when creating an object.
+
+```java
+Product p = new Product("Phone", 50000, "P001");
+```
+
+You do not call the constructor again on the same object to update it.
+
+For updating an existing object, use a method/setter.
+
+---
+
+## 11. Calling a Parent Method
+
+A child class inherits accessible methods from the parent.
+
+```java
+class Test {
+
+    void printTest() {
+        System.out.println("Hello");
+    }
+}
+
+class Driver extends Test {
+}
+```
+
+You can call:
+
+```java
+Driver d = new Driver();
+d.printTest();
+```
+
+If you specifically want to call the **parent version** of a method:
+
+```java
+class Driver extends Test {
+
+    void callParentMethod() {
+        super.printTest();
+    }
+}
+```
+
+### Remember
+
+```text
+super()          → parent constructor
+super.method()   → parent method
+```
+
+---
+
+## 12. `Driver extends Test` Example
+
+```java
+class Test {
+
+    String name;
+    int age;
+
+    Test(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Test() {
+        this("Sudarshan", 27);
+    }
+
+    void printTest() {
+        System.out.println(name);
+        System.out.println(age);
+    }
+}
+
+class Driver extends Test {
+
+    void callPrint() {
+        super.printTest();
+    }
+
+    public static void main(String[] args) {
+        Driver d = new Driver();
+        d.callPrint();
+    }
+}
+```
+
+### Flow
+
+```text
+new Driver()
+     ↓
+parent constructor
+     ↓
+Test()
+     ↓
+this("Sudarshan", 27)
+     ↓
+Test(String, int)
+     ↓
+name and age initialized
+     ↓
+super.printTest()
+     ↓
+parent method executes
+```
+
+---
+
+## 13. Java Comments / Documentation
+
+Comments help other developers understand code without reading every line.
+
+### Single-line comment
+
+```java
+// This creates a user object
+```
+
+### Multi-line comment
+
+```java
+/*
+   This class represents a user.
+*/
+```
+
+### JavaDoc
+
+```java
+/**
+ * Represents a user in the application.
+ */
+class User {
+}
+```
+
+JavaDoc is useful for documenting classes and methods.
+
+---
+
+# Quick Revision
+
+```text
+Constructor
+→ Initialize object
+
+this
+→ Current object
+
+this()
+→ Same class constructor
+
+extends
+→ Inheritance
+
+super()
+→ Parent constructor
+
+super.method()
+→ Parent method
+
+Constructor chaining
+→ One constructor calls another
+
+Parent class
+→ Common fields / behavior
+
+Child class
+→ Specific fields / behavior
+```
+
+## Most Important
+
+```text
+this()  = SAME CLASS
+super() = PARENT CLASS
+```
+
+---
 # Java Constructors
 
 This repository contains Java practice and notes on **Constructors, Constructor Chaining, `this()`, and `super()`**.
