@@ -1,20 +1,5 @@
 # Kodewala Academy – Java Backend Tests: Complete Question Bank (Tests 1–4)
 
-All questions from the four attached files (`Test #1` HTML and `Test - 2/3/4` PDFs), with the correct option and a short explanation.
-
-| Test | Source file | Questions |
-|---|---|---|
-| Test 1 | Kodewala Academy (25th Aug, 2026) - Java Backend Test # 1.html | 39 |
-| Test 2 | Test - 2.pdf | 40 |
-| Test 3 | Test - 3.pdf | 45 |
-| Test 4 | Test - 4.pdf | 31 |
-| **Total** | | **155** |
-
-**Notes**
-- The correct answer comes from the check marks in each test's review page. Where the student's answer was wrong, the red tick marks the right option.
-- Test 1 Q16/Q17 and Test 3 Q37/Q38 are duplicates in the source and are kept as they appear.
-- **Test 2 Q37 has a questionable answer key**: see the warning under that question.
-
 ## Contents
 - Test 1 (39 questions)
 - Test 2 (40 questions)
@@ -25,7 +10,7 @@ All questions from the four attached files (`Test #1` HTML and `Test - 2/3/4` PD
 
 ## Test 1 – Java Backend Test # 1
 
-39 questions
+
 
 ### Q1. Which of the following is a valid variable name?
 
