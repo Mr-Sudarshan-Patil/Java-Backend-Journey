@@ -355,14 +355,17 @@ Consider the following code saved in Test.java:
 
 class A 
 {
+
 }
 class B 
 {
+
 }
 public class Test 
 {
     public static void main(String[] args)
-   {
+    {
+
     }
 }
 After compilation (javac Test.java), how many .class files will be generated?
@@ -394,11 +397,14 @@ After compilation (javac Test.java), how many .class files will be generated?
 
 ### Q27. File Name is Demo.java
 
-```java
 What will happen?
 
-public class Test {
-    public static void main(String[] args) {
+```java
+
+public class Test 
+{
+    public static void main(String[] args) 
+    {
         System.out.println("Hello");
     }
 }
@@ -418,8 +424,10 @@ public class Test {
 ### Q28. What will happen when the following program is executed without any command-line arguments?
 
 ```java
-public class Test {
-    public static void main(String[] args) {
+public class Test 
+{
+    public static void main(String[] args) 
+    {
         System.out.println(args[0]);
     }
 }
@@ -439,7 +447,8 @@ public class Test {
 ### Q29. What is the output?
 
 ```java
-public class Test {
+public class Test 
+{
     public static void main(String[] args) {
         if(args.length > 0) {
             System.out.println(args[0]);
@@ -578,15 +587,16 @@ When display() is called, where is the method call information stored during exe
 
 ---
 
-### Q35. int a = 10;
+### Q35. 
 
 ```java
+int a = 10;
 int b = 20;
 System.out.println(a > 5 && b < 15);
 
+```
 
 output ?
-```
 
 - **A.** true
 - **B.** false
