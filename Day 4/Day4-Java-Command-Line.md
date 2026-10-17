@@ -8,7 +8,7 @@ Command-line arguments allow us to pass values to a Java program when running it
 
 ## 📌 1. What are Command-Line Arguments?
 
-Command-line arguments are values that we provide to a Java program **while running the program**.
+Command-line arguments are values supplied when launching the program. The JVM passes them to main(String[] args) before main() begins execution.
 
 ### Example
 
