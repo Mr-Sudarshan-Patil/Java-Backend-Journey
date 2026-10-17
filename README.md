@@ -3,8 +3,9 @@
 Hi! This repository is my daily learning log while I learn **Java** and backend development, under the mentorship of [Suresh Bishnoi](https://www.linkedin.com/in/bishnoisuresh/) Sir.
 
 ---
-
-## 🗓️ Day 1 – Java Basics
+# [All Test Questions](Exams/README.md)
+---
+## 🗓️ Java Basics
 
 I learned why Java is used so widely in the industry:
 
@@ -21,7 +22,7 @@ I also wrote and successfully **compiled my first Java program**. Our instructor
 
 ---
 
-## 🗓️ Day 2 – How Java Works Internally
+## 🗓️  How Java Works Internally
 
 Today I learned the **full execution flow** of a Java program:
 
@@ -41,7 +42,7 @@ I'm also uploading all my practice code to GitHub every day to stay consistent �
 
 ---
 
-## 🗓️ Day 3 – Structure and Flow of a Java Program
+## 🗓️  Structure and Flow of a Java Program
 
 Today I focused on understanding the **basic structure** of a Java program, especially the `main()` method.
 
@@ -73,7 +74,7 @@ I wrote a small program combining all these concepts together, instead of just r
 # [Static vs Dynamic](static-vs-dynamic/static.md)
 # [Understanding of JIT and Interpreter with full Architecture](Understanding%20Of%20JIT/README.md)
 ---
-# [Day 4 Command-Line Arguments](Day%204/Day4-Java-Command-Line.md)
+# [Command-Line Arguments](Day%204/Day4-Java-Command-Line.md)
 
 ---
 # Java Data Types
@@ -1840,6 +1841,418 @@ super() → Call constructor in PARENT class
 ```
 
 **Constructor Chaining = Calling one constructor from another constructor.**
+
+---
+
+# Debugging in Eclipse (Java)
+
+
+**Topics covered today**
+1. Constructors (and the default constructor)
+2. `this` keyword
+3. Instance variable vs static variable
+4. `Object` class (parent of all classes)
+5. Debugging in Eclipse: breakpoints, F5, F6, F7, F8
+6. Problems students faced and how they were fixed
+
+---
+
+## Part 1: Code We Wrote in Class
+
+### 1.1 `Invoice` class (constructor, `this`, instance and static variables)
+
+An invoice is the bill you get by email when you place an order on Amazon. It has: amount, item name, billing address, customer ID, customer name.
+
+```java
+public class Invoice {
+
+    // Instance variables: each object gets its OWN copy
+    int amount;
+    String itemName;
+    String billingAddress;
+    String customerId;
+    String customerName;
+
+    // Static variable: ONE copy, shared by ALL objects
+    static int GST = 18;
+
+    // Constructor: used to create the object and set its values
+    public Invoice(int _amount, String _itemName, String _billingAddress,
+                   String _customerId, String _customerName) {
+        this.amount = _amount;
+        this.itemName = _itemName;
+        this.billingAddress = _billingAddress;
+        this.customerId = _customerId;
+        this.customerName = _customerName;
+    }
+}
+```
+
+### 1.2 `Driver` class (creates the objects)
+
+The `Driver` class has the `main` method. It creates objects of `Invoice`.
+
+```java
+public class Driver {
+    public static void main(String[] args) {
+
+        // First customer
+        Invoice inv1 = new Invoice(180000, "iPhone 18",
+                "BTM 2nd Stage, Bangalore", "C101", "Customer One");
+
+        // Second customer
+        Invoice inv2 = new Invoice(5000, "Item 2",
+                "Some Address", "C102", "Adair");
+
+        System.out.println("First invoice");
+        System.out.println(inv1.amount);
+        System.out.println(inv1.customerName);
+        System.out.println(Invoice.GST);
+
+        System.out.println("Second invoice");
+        System.out.println(inv2.amount);
+        System.out.println(inv2.customerName);
+        System.out.println(Invoice.GST);
+
+        // Static can be changed (it changes for ALL objects)
+        Invoice.GST = 28;
+        System.out.println(Invoice.GST);
+    }
+}
+```
+
+### 1.3 `NotificationService` class (used to practice F5, F6, F7, F8)
+
+```java
+public class NotificationService {
+
+    public void sendNotification(String type) {
+        System.out.println("Start");
+        // business logic here
+        System.out.println("End");
+
+        if (type.equals("SMS")) {
+            sendSMS();
+        } else if (type.equals("EMAIL")) {
+            sendEmail();
+        } else {
+            sendWhatsApp();
+        }
+    }
+
+    private void sendSMS()      { System.out.println("Sending SMS"); }
+    private void sendEmail()    { System.out.println("Sending Email"); }
+    private void sendWhatsApp() { System.out.println("Sending WhatsApp"); }
+}
+```
+
+### 1.4 `Driver` for NotificationService
+
+```java
+public class Driver {
+    public static void main(String[] args) {
+        NotificationService obj = new NotificationService();
+
+        obj.sendNotification("SMS");     // first customer
+        obj.sendNotification("EMAIL");   // second customer
+        obj.sendNotification("OTHER");   // third customer (WhatsApp)
+    }
+}
+```
+
+Only `sendNotification` is `public`, so the Driver calls only that one. The other three are `private`.
+
+---
+
+## Part 2: Constructors
+
+- A **constructor** is used to create an object of a class and set its values.
+- If you do **not** write any constructor, the **compiler adds a default constructor** for you.
+- If you write **any constructor with parameters**, the default one is **NOT** added.
+- **How to prove it (trainer's tip):** do not memorise theory, just try it in code.
+  - Call `new Invoice()`. If it works, the default constructor exists.
+  - Add a constructor with parameters, then try `new Invoice()` again. It gives an error, so the default is gone.
+
+### What happens when Java runs `new Invoice(180000, "iPhone 18", ...)`
+1. Java gets memory on the **heap** for the new object.
+2. It **finds the matching constructor** (same number and type of values).
+3. The values go into the **local variables** (the parameters).
+4. The local values are copied into the **instance variables**.
+5. The object is created and the reference (`inv1`) points to it.
+
+---
+
+## Part 3: The `this` Keyword
+
+- `this` means **the current object**.
+- `this.amount = _amount;` means: *this object's amount = the value I received.*
+- Java works even without `this.` when the names are different, but writing `this.` makes the code **easier to read**. The trainer says to keep it.
+- **If the parameter and the instance variable have the same name** and you remove `this.`:
+  - Java gives a **warning** ("assignment has no effect").
+  - The object is created, but the **field is NOT set**, because Java uses the local variable (it gives preference to local).
+- Always use **proper naming** so local variables and instance variables are not confused.
+
+---
+
+## Part 4: Instance Variable vs Static Variable
+
+| | Instance variable | Static variable |
+|---|---|---|
+| Level | Object level | Class level |
+| Copies | **Separate copy for each object** | **One copy** for all objects |
+| In our code | `amount`, `itemName`, `customerName` ... | `GST` |
+| Real life | Your name, address, amount on your invoice | GST 18% is the same for every customer |
+
+**Seen in the debugger:** `inv1.amount` = 180000 and `inv2.amount` = 5000. Each object has its own values. But `GST` is the same 18 for both, even if you create 1000 invoices.
+
+**Can static be changed?**
+- Yes. `Invoice.GST = 28;` changes it for **all** customers from then on.
+- If it is declared `final`, you **cannot** change it.
+
+**Why not set GST per customer inside the constructor?**
+- If the first customer sets GST to 150, it becomes 150 for everybody. If someone changes it to 250, it becomes 250 for everybody. That is wrong. GST is common to all, so keep it static.
+
+**Order of events:**
+1. The class is **loaded** into memory first.
+2. **Static** variables are initialised.
+3. Then **objects** are created.
+
+---
+
+## Part 5: The `Object` Class
+
+- If your class has **no parent**, **`Object`** is the parent by default.
+- If your class has a parent, then `Object` is the **indirect** parent (parent of the parent).
+- `Object` is the **name of a class** (capital O). It is **not** "an object of Invoice".
+- It is the **root of all Java classes**.
+- Java writes this for you even if you don't. `Invoice` is a child of `Object`.
+- The keyword **`extends`** is used to build a **relationship between two classes**.
+- Trainer's point: a child cannot exist without a parent in real life, and the same is true for Java classes.
+
+---
+
+## Part 6: Debugging in Eclipse
+
+### Why debug?
+- Strong fundamentals help you **get** the job.
+- Knowing how to **debug** helps you **survive and get promoted**.
+- Debug the code you write **every day**.
+
+### What is a breakpoint?
+A **breakpoint** is a stop sign on a line of code. The program pauses there so you can look at the variables.
+
+- Double-click on the left bar of a line to add or remove a breakpoint.
+- **Window > Show View > Breakpoints** shows all breakpoints in your workspace.
+- A breakpoint with a **cross line** is **disabled**. Click it to enable it again.
+- You can also remove all breakpoints from this window.
+- **Do NOT put a breakpoint on the class line.** That debugs the class loading mechanism, which we don't know yet. Put breakpoints **inside methods** and **constructors**.
+
+### How to start debugging
+Right-click the class with `main` > **Debug As** > **Java Application**.
+
+### The 4 keys
+
+| Key | Name | Simple English |
+|-----|------|----------------|
+| **F6** | Step Over | Go to the **next line** |
+| **F5** | Step Into | Go **inside** the method or constructor |
+| **F7** | Step Return | **Come back** to the place where the method was called |
+| **F8** | Resume | **Jump to the next breakpoint** (if there is no more, the program exits) |
+
+These are **Eclipse** shortcuts. In IntelliJ or other editors the keys may be different, but the 4 ideas are the same: step over, step into, step return, jump to next breakpoint.
+
+### When to use which
+- **F6**: you want to move one line at a time.
+- **F8**: you have a breakpoint at line 10 and the next one at line 90. Without F8 you would press F6 about 80 times.
+- **F5**: you want to look inside a method and it has no breakpoint inside.
+- **F7**: you went inside a 100 or 200 line method with F5, and after 3 or 4 lines you see it is fine. Press F7 to go back to where it was called.
+
+### What we saw while debugging `Invoice`
+- Put one breakpoint in the constructor and one in `main`.
+- **F8** takes you to the constructor breakpoint.
+- The **local variables** hold the values you passed (amount 180000, iPhone 18, address, customer ID).
+- Press **F6** to see them being copied into the **instance variables**.
+- Pressing F8 on that line would run it and exit without showing you. Use **F6** to see inside.
+- Pressing **F5** on `new Invoice(...)` goes into constructor internals too (like String handling), so a breakpoint in the constructor is easier.
+- With two invoice objects you can see **separate values** for each (180000 and 5000).
+
+### What we saw while debugging `NotificationService`
+- **F6** to move to the next line.
+- **F5** to go inside a method (`sendNotification`).
+- Do not press F5 on `System.out.println(...)`. It is Java's own code and has no problem.
+- Hover over a variable to see its value (for example, which customer got SMS).
+- **F8** to jump to the next breakpoint.
+- **F7** to come back to `main` and continue from there.
+
+### Real-life example the trainer gave
+- A customer says, "I'm unable to place an order" or "I'm not getting WhatsApp messages".
+- Reading the code alone does not tell you the cause. You need to see the **data**.
+- You reproduce the problem, put a breakpoint, and look at the variables and the flow.
+- Examples: the order is from a country Amazon does not allow, or the user turned off WhatsApp in their profile page.
+- **Breakpoints do not change the order of execution.** They only let you see the internal state and flow of the program.
+
+---
+
+## Part 7: Problems Students Faced in Class
+
+| Problem | Cause | Fix |
+|---------|-------|-----|
+| **F7 (or other F-key) not working** | Some keyboards share the F-keys with other functions | Try **Fn + F6** and so on, or fix the keyboard setting |
+| **Debug does not stop anywhere** | Breakpoint is in a method that **nobody calls** | Call the method from `main` first, then debug |
+| **Student called private methods directly from `main`** | Everything was written in one class with its own `main` | Make **two classes**: `NotificationService` (logic) and `Driver` (has `main`). From the Driver call only the **public** `sendNotification` using `obj.sendNotification(...)` |
+| **Breakpoint not hit** | Breakpoint disabled or removed | Check **Window > Show View > Breakpoints** |
+| **Confused between Run and Debug** | Used Run | Use **Debug As > Java Application** (re-debug, not just re-run) |
+
+**Tip from the trainer:** After you find the problem in one class, **remove the breakpoints** there and put new ones in the **next class** you want to check. You may also keep adding breakpoints while you search.
+
+---
+
+## Quick Cheat Sheet
+
+```
+F5 = Step Into   (go inside)
+F6 = Step Over   (next line)
+F7 = Step Return (come back out)
+F8 = Resume      (next breakpoint)
+
+Breakpoint        = double-click on the left bar of a line
+Start debugging   = Right-click > Debug As > Java Application
+All breakpoints   = Window > Show View > Breakpoints
+```
+
+## Practice Given in Class
+1. Write the `NotificationService` and `Driver` classes and practice F5, F6, F7, F8.
+2. Compare static vs instance variables (about 5 to 7 minutes).
+3. Try the default constructor test.
+4. Debug something every day.
+
+---
+# Control Flow: if, else, else if
+
+## What is control flow?
+Your program **decides what to do based on a condition**, just like in life.
+*If fare is less than 5000, book flight. Else, go by train.*
+
+- **Condition** = the question (true or false)
+- **Logic** = the code that runs when the condition is true
+
+---
+
+## 1. `if`
+Code runs **only if** the condition is true.
+
+```java
+public class Booking {
+
+    // Max 6 passengers allowed per PNR (IRCTC rule)
+    public String book(String from, String to, int numberOfPassengers) {
+        String pnr = null;
+
+        if (numberOfPassengers > 6) {
+            System.err.println("Only 6 passengers are allowed per PNR");
+        }
+        return pnr;
+    }
+}
+```
+
+- 7 passengers: condition is **true**, so the message prints.
+- 5 passengers: condition is **false**, so the `if` block is skipped.
+
+---
+
+## 2. `if` and `else`
+Do **this** or do **that**. Only one of them runs.
+
+```java
+if (numberOfPassengers > 6) {
+    System.err.println("Only 6 passengers are allowed per PNR");
+} else {
+    System.out.println("PNR: 12345, Status: Confirmed");
+}
+```
+
+- 15 passengers: `if` runs, `else` is skipped.
+- 5 passengers: `if` is skipped, `else` runs.
+
+---
+
+## 3. `else if` (many conditions)
+Use it when you have **more than two choices**. Java checks from top to bottom and runs **only the first one that is true**.
+
+```java
+public class TripPlanner {
+
+    public String suggestPlan(String source, String destination, int budget) {
+        String suggestion = null;
+
+        if (budget <= 1000) {
+            suggestion = "Stay at home";
+        } else if (budget > 1000 && budget <= 3000) {
+            suggestion = "Visit a place inside the city, like Lalbagh";
+        } else if (budget > 3000 && budget <= 5000) {
+            suggestion = "Take a taxi to a nearby place";
+        } else {
+            suggestion = "Visit Goa";   // everything above 5000
+        }
+        return suggestion;
+    }
+}
+```
+
+```java
+public class Driver {
+    public static void main(String[] args) {
+        TripPlanner planner = new TripPlanner();
+        String response = planner.suggestPlan("Bangalore", "Goa", 400);
+        System.out.println(response);
+    }
+}
+```
+
+| Budget | Result |
+|--------|--------|
+| 400 | Stay at home |
+| 2100 | Visit a place inside the city |
+| 3200 | Taxi to a nearby place |
+| 20000 | Visit Goa |
+
+**Remember:** only **one** condition runs per execution. Once one is true, the rest are skipped. The last `else` runs when **nothing else matches**.
+
+---
+
+## Debugging tip from today
+Select a condition, press **Ctrl + Shift + I** (Inspect) in debug mode. It shows **true or false**.
+
+Keys used again: **F5** go inside, **F6** next line.
+
+---
+
+## Small points the trainer mentioned
+- **Non-static method** = works on an object's data (example: fund transfer).
+- **Static method** = just takes inputs and gives an output (example: interest calculation).
+- Write **comments** in your code.
+- Return a **number** (`int` or `double`) for calculations, not a `String` message.
+- Follow **naming rules**: method names start with a **small letter** (`calculateDiscount`).
+
+---
+
+## Task: Make My Trip Discount
+
+| Fare | Discount |
+|------|----------|
+| 5000 or below | No discount |
+| 5001 to 10000 | 10% of the fare |
+| Above 10000 | 15% of the fare |
+| Any fare | **Maximum discount is 1250** |
+
+**What the trainer wants:**
+- Proper class and method names (not everything in one class)
+- Clear, readable code with comments
+- The method should **return** the discount (not just print it)
+- Handle **wrong inputs**, like a negative fare (-1 should not give a discount)
+
+**Extra practice:** make a GST slab example (like Amazon or Flipkart) using `if`, `else if`, `else`.
 
 
 ---
