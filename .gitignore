@@ -1,1 +1,11 @@
-/.metadata/
+# Ignore bin folders in every Java project
+**/bin/
+
+# Ignore Eclipse settings in every Java project
+**/.settings/
+
+# Ignore compiled Java files
+**/*.class
+
+# Ignore Eclipse workspace metadata
+.metadata/
